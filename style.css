@@ -1,9 +1,5 @@
-/* styles.css */
-
-/* 기본 스타일 */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family: 'NEXON Lv2 Gothic';
     padding: 0;
     background-image: url(img/mainbackground.jpg);
 }
@@ -39,29 +35,6 @@ input[type="text"] {
     text-shadow: 2px 2px #ffd335; 
 }
 
-/* 갤러리 그리드 스타일 */
-#gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 10px;
-}
-
-.card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-}
-
-.card img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.card h3 {
-    margin-top: 10px;
-}
-
 /* 모바일 반응형 스타일 */
 @media (max-width: 768px) {
     main {
@@ -81,3 +54,9 @@ input[type="text"] {
 
 /* Font */
 @import url('https://fonts.cdnfonts.com/css/snowstorm');
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
