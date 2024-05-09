@@ -35,20 +35,21 @@ input[type="text"] {
     text-shadow: 2px 2px #ffd335; 
 }
 
-/* 모바일 반응형 스타일 */
+
+/* 모바일용 CSS */
 @media (max-width: 768px) {
-    main {
-        padding: 10px;
+    #fishImgContainer {
+        margin: 0 10px; /* 모바일에서 좌우 여백 조정 */
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));         
+        text-align: center;
+        color: white;
+        justify-items: center;    
     }
-
-    input[type="text"] {
-        width: calc(100% - 20px); /* 좌우 여백 고려 */
-    }
-
-    /* 모바일에서 갤러리 항목 크기 조정 */
-    #gallery {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        grid-gap: 5px;
+    
+    /* 모바일에서 글꼴 크기 조정 */
+    body {
+        font-size: 14px;   
     }
 }
 
