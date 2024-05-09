@@ -41,26 +41,27 @@ function createCard(fish) {
     name.textContent = fish.name;
 
     const rank = document.createElement('p');
-    rank.textContent = "Rank" + fish.rank;
+    rank.textContent = "랭크" + fish.rank;
 
     const weight = document.createElement('p');
-    weight.textContent = "Weight" + fish.weight;
+    weight.textContent = "살점 무게" + fish.weight;
 
     const activityTime = document.createElement('p');
-    activityTime.textContent = "Activity Time" + fish.activityTime;
+    activityTime.textContent = "활동 시간" + fish.activityTime;
 
-    const cookingUsed = document.createElement('p');
-    cookingUsed.textContent = "Cooking Used" + fish.cookingUsed;
+    const cookingUsed = document.createElement('div');
+    cookingUsed.classList.add('cooking-used');
+
+    
     
     const fishInfo = document.createElement('p');
-    fishInfo.textContent = "Fish Info" + fish.fishInfo;    
+    fishInfo.textContent = "설명" + fish.fishInfo;    
 
     card.appendChild(image);
     card.appendChild(name);
     card.appendChild(rank);
     card.appendChild(weight);
-    card.appendChild(activityTime);
-    card.appendChild(cookingUsed);
+    card.appendChild(activityTime);    
 
      // materials 정보가 있을 경우 추가
      if (fish.materials) {
@@ -69,6 +70,30 @@ function createCard(fish) {
         card.appendChild(materials);
     }
     
+    // 요리 방식
+    if (typeof fish.cookingUsed === 'object') {
+        const cookingUsed = document.createElement('div');
+        cookingUsed.classList.add('사용요리');
+
+        if (fish.cookingUsed.머리) {
+            const cookingTitle1 = document.createElement('p');
+            cookingTitle1.textContent = "머리" + fish.cookingUsed.머리;
+            cookingUsed.appendChild(cookingTitle1);
+        }
+
+        if (fish.cookingUsed.살점) {
+            const cookingTitle2 = document.createElement('p');
+            cookingTitle2.textContent = "살점" + fish.cookingUsed.살점;
+            cookingUsed.appendChild(cookingTitle2);
+        }
+
+        card.appendChild(cookingUsed);
+    } else {
+        const cookingUsed = document.createElement('p');
+        cookingUsed.textContent = "사용요리" + fish.cookingUsed;
+        card.appendChild(cookingUsed);
+    }
+
     card.appendChild(fishInfo);
     gallery.appendChild(card);
 }

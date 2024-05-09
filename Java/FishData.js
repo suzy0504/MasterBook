@@ -2,7 +2,8 @@
 const FishList = [
     {
         name: '흰동가리',
-        image: 'https://i.namu.wiki/i/yZTbSA0YyWXw7Aa1VNSdxpKbI2mvn9-uh7US-ATsUskRwbLaqeudFKUqj4xKfP96-NojtomNybrw2O1wWf2aAQ.png',
+        // image: 'https://i.namu.wiki/i/yZTbSA0YyWXw7Aa1VNSdxpKbI2mvn9-uh7US-ATsUskRwbLaqeudFKUqj4xKfP96-NojtomNybrw2O1wWf2aAQ.png',
+        image: 'img/fishImg/흰동가리.png',
         rank: '1',
         weight: '0.2',
         activityTime: '낮',
@@ -189,6 +190,19 @@ const FishList = [
         activityTime: '낮',
         cookingUsed: '달걀프라이해파리 군함 초밥\n해파리 무침',          
         fishInfo: '돔 형태의 중앙을 링과 주름으로 둘러싼 최대 40cm 정도의 해파리. 여러 번 갈라지는 수많은 촉수와 봉이 달린 촉수를 가지고 있으며 지중해 연안에 서식한다.'  
+    },
+    {
+        name: '백기흉상어',
+        image: 'https://i.namu.wiki/i/RaThANdYiKM89kaOE3w46aepKlKTp9KzvYnk2o82jSE7c5asX1_ATBLji8wnzYlghZqkpHv_nIWhDK2IDNXX-CzwY7wnNmrEpU7XUSziS1P9KPfKrhiOVI-OGOyzLKkfL1WJFo_vA_vlQL1BJ6tDEA.webp',
+        rank: '4',
+        weight: '2.5',
+        activityTime: '항상',
+        cookingUsed: {
+            살점: '백기흉상어 초밥',
+            머리: '백기흉상어 머리 통구이'
+        },
+        materials: '백기흉상어의 이빨',        
+        fishInfo: '날씬한 몸매에 등지느러미와 꼬리지느러미 끝이 하얀 평균 1.6m 정도의 비교적 작은 상어. 인도양과 태평양의 수심 8~40m 사이의 산호초 주변에 널리 서식한다.'  
     },
 ];
 
