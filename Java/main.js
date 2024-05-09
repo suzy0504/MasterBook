@@ -63,6 +63,30 @@ function createCard(fish) {
     card.appendChild(weight);
     card.appendChild(activityTime);    
 
+    // 포획 방식
+    if (typeof fish.CaptureMethod === 'object') {
+        const CaptureMethodDiv = document.createElement('div');
+        CaptureMethodDiv.classList.add('capture-method');
+    
+        if (fish.CaptureMethod["★★"]) {
+            const Capture1 = document.createElement('p');
+            Capture1.textContent = "★★ " + fish.CaptureMethod["★★"];
+            CaptureMethodDiv.appendChild(Capture1);
+        }
+    
+        if (fish.CaptureMethod["★★★"]) {
+            const Capture2 = document.createElement('p');
+            Capture2.textContent = "★★★ " + fish.CaptureMethod["★★★"];
+            CaptureMethodDiv.appendChild(Capture2);
+        }
+    
+        card.appendChild(CaptureMethodDiv);
+    } else {
+        const CaptureMethod = document.createElement('p');
+        CaptureMethod.textContent = "포획 방식: " + fish.CaptureMethod;
+        card.appendChild(CaptureMethod);
+    }
+
      // materials 정보가 있을 경우 추가
      if (fish.materials) {
         const materials = document.createElement('p');
@@ -70,29 +94,53 @@ function createCard(fish) {
         card.appendChild(materials);
     }
     
-    // 요리 방식
-    if (typeof fish.cookingUsed === 'object') {
-        const cookingUsed = document.createElement('div');
-        cookingUsed.classList.add('사용요리');
+    // 요리 방식 - 머리, 살점, 붉은살, 중뱃살, 대뱃살
+if (typeof fish.cookingUsed === 'object') {
+    const cookingUsedDiv = document.createElement('div');
+    cookingUsedDiv.classList.add('cooking-used');
 
-        if (fish.cookingUsed.머리) {
-            const cookingTitle1 = document.createElement('p');
-            cookingTitle1.textContent = "머리" + fish.cookingUsed.머리;
-            cookingUsed.appendChild(cookingTitle1);
-        }
-
-        if (fish.cookingUsed.살점) {
-            const cookingTitle2 = document.createElement('p');
-            cookingTitle2.textContent = "살점" + fish.cookingUsed.살점;
-            cookingUsed.appendChild(cookingTitle2);
-        }
-
-        card.appendChild(cookingUsed);
-    } else {
-        const cookingUsed = document.createElement('p');
-        cookingUsed.textContent = "사용요리" + fish.cookingUsed;
-        card.appendChild(cookingUsed);
+    // 머리 요리
+    if (fish.cookingUsed.머리) {
+        const cookingHead = document.createElement('p');
+        cookingHead.textContent = "머리: " + fish.cookingUsed.머리;
+        cookingUsedDiv.appendChild(cookingHead);
     }
+
+    // 살점 요리
+    if (fish.cookingUsed.살점) {
+        const cookingFlesh = document.createElement('p');
+        cookingFlesh.textContent = "살점: " + fish.cookingUsed.살점;
+        cookingUsedDiv.appendChild(cookingFlesh);
+    }
+
+    // 붉은살 요리
+    if (fish.cookingUsed.붉은살) {
+        const cookingRedFlesh = document.createElement('p');
+        cookingRedFlesh.textContent = "붉은살: " + fish.cookingUsed.붉은살;
+        cookingUsedDiv.appendChild(cookingRedFlesh);
+    }
+
+    // 중뱃살 요리
+    if (fish.cookingUsed.중뱃살) {
+        const cookingMidFlesh = document.createElement('p');
+        cookingMidFlesh.textContent = "중뱃살: " + fish.cookingUsed.중뱃살;
+        cookingUsedDiv.appendChild(cookingMidFlesh);
+    }
+
+    // 대뱃살 요리
+    if (fish.cookingUsed.대뱃살) {
+        const cookingLargeFlesh = document.createElement('p');
+        cookingLargeFlesh.textContent = "대뱃살: " + fish.cookingUsed.대뱃살;
+        cookingUsedDiv.appendChild(cookingLargeFlesh);
+    }
+
+    card.appendChild(cookingUsedDiv);
+} else {
+    const cookingUsed = document.createElement('p');
+    cookingUsed.textContent = "사용요리: " + fish.cookingUsed;
+    card.appendChild(cookingUsed);
+}
+
 
     card.appendChild(fishInfo);
     gallery.appendChild(card);
