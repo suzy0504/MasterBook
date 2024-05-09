@@ -1,42 +1,7 @@
+import FishList from "./FishData.js";
+
 const gallery = document.getElementById('gallery');
 const fishImgContainer = document.getElementById('fishImgContainer');
-
-// 도감 데이터
-const FishList = [
-    {
-        name: '흰동가리',
-        image: 'https://i.namu.wiki/i/yZTbSA0YyWXw7Aa1VNSdxpKbI2mvn9-uh7US-ATsUskRwbLaqeudFKUqj4xKfP96-NojtomNybrw2O1wWf2aAQ.png',
-        rank: '1',
-        weight: '0.2',
-        activityTime: '낮',
-        cookingUsed: '흰동가리 초밥\n열대어 마늘구이'
-    },
-    {
-        name: '콤버',
-        image: 'https://i.namu.wiki/i/ICNzuxA8oIndZ_PSESfSuotAiAZvzl5YPdUhFMJocNSFBHh_wVIOwqGOvxtAlVTDsKE_krL5VSPrAq5xzTaqSg.webp',
-        rank: '1',
-        weight: '0.2',
-        activityTime: '낮',
-        cookingUsed: '콤버 초밥 콤버 샌드위치',        
-    },
-    {
-        name: '지중해카디널피쉬',
-        image: 'https://i.namu.wiki/i/QmG5mgUzsw28-rJeDWV2lflhO_BCQTa94S6YxkB6aBn60_T74DNGvoS84RIFqD67ZVUV6Lz159dESVo5P2hTCg.webp',
-        rank: '1',
-        weight: '0.2',
-        activityTime: '낮',
-        cookingUsed: '지중해카디널피쉬 초밥',       
-    },
-    {
-        name: '금강바리',
-        image: 'https://i.namu.wiki/i/NdxtCq0_3bF9dVSd1yslnbpXv0hPHZudayFmS7C5FiEO6Xyr_CQn6Q-SoCEADPx4outjivjQ0jpD7z924d_4XQ.png',
-        rank: '1',
-        weight: '0.3',
-        activityTime: '낮',
-        cookingUsed: '금강바리  초밥',       
-    }
-    
-];
 
 // 도감 이미지 항목 생성 함수
 function createCardImg(fish) {
@@ -76,17 +41,20 @@ function createCard(fish) {
     name.textContent = fish.name;
 
     const rank = document.createElement('p');
-    rank.textContent = "Rank " + fish.rank;
+    rank.textContent = "Rank" + fish.rank;
 
     const weight = document.createElement('p');
-    weight.textContent = "Weight " + fish.weight;
+    weight.textContent = "Weight" + fish.weight;
 
     const activityTime = document.createElement('p');
-    activityTime.textContent = "Activity Time " + fish.activityTime;
+    activityTime.textContent = "Activity Time" + fish.activityTime;
 
     const cookingUsed = document.createElement('p');
-    cookingUsed.textContent = "Cooking Used " + fish.cookingUsed;
-   
+    cookingUsed.textContent = "Cooking Used" + fish.cookingUsed;
+    
+    const fishInfo = document.createElement('p');
+    fishInfo.textContent = "Fish Info" + fish.fishInfo;    
+
     card.appendChild(image);
     card.appendChild(name);
     card.appendChild(rank);
@@ -94,6 +62,14 @@ function createCard(fish) {
     card.appendChild(activityTime);
     card.appendChild(cookingUsed);
 
+     // materials 정보가 있을 경우 추가
+     if (fish.materials) {
+        const materials = document.createElement('p');
+        materials.textContent = "Materials" + fish.materials;
+        card.appendChild(materials);
+    }
+    
+    card.appendChild(fishInfo);
     gallery.appendChild(card);
 }
 
