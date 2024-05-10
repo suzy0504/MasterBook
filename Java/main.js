@@ -3,6 +3,25 @@ import FishList from "./FishData.js";
 const gallery = document.getElementById('gallery');
 const fishImgContainer = document.getElementById('fishImgContainer');
 
+
+const modal = document.querySelector(".modal");
+const modal_img = document.querySelector(".modal_content");
+const span = document.querySelector(".close");
+
+fishImgContainer.addEventListener('click', ()=>{
+  modalDisplay("block");
+  modal_img.src = img.src;
+});
+span.addEventListener('click', ()=>{
+  modalDisplay("none");
+});
+modal.addEventListener('click', ()=>{
+  modalDisplay("none");
+});
+function modalDisplay(text){
+  modal.style.display = text;
+}
+
 // 도감 이미지 항목 생성 함수
 function createCardImg(fish) {
     const fishcard = document.createElement('div');
@@ -150,3 +169,4 @@ if (typeof fish.cookingUsed === 'object') {
 FishList.forEach(fish => {
     createCardImg(fish);
 });
+
