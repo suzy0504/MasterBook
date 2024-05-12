@@ -1,0 +1,48 @@
+body {
+    font-family: 'NEXON Lv2 Gothic';
+    padding: 0;
+    background-image: url(/img/mainbackground.jpg);
+    background-attachment: fixed;
+}
+
+main {
+    padding: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    /* 입력 상자의 크기 계산을 보정합니다. */
+}
+
+#headerBig {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 130px;
+    font-family: 'Snowstorm', sans-serif;
+    color: #ffd335;
+    text-shadow: 2px 2px rgb(48, 110, 110);
+}
+
+#headerSmall {
+    letter-spacing: 12px;
+    margin-top: -150px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Snowstorm', sans-serif;
+    color: rgb(48, 110, 110);
+    text-shadow: 2px 2px #ffd335;
+}
+
+/* Font */
+@import url('https://fonts.cdnfonts.com/css/snowstorm');
+
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
