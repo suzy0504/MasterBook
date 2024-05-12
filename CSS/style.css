@@ -4,7 +4,11 @@ body {
     background-image: url(/img/mainbackground.jpg);
     background-attachment: fixed;
 }
-
+@media (max-width: 600px) {
+    body {
+        background-attachment: fixed;
+    }
+}
 main {
     padding: 20px;
 }
